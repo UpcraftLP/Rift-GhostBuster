@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(PhantomSpawner.class)
+@Mixin(value = PhantomSpawner.class, priority = 500)
 public class MixinPhantomSpawner {
 
     @Inject(method = "spawnMobs", at = @At("HEAD"), cancellable = true)
