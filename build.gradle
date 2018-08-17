@@ -5,10 +5,17 @@ buildscript {
             name = "DimDev"
             url = "https://www.dimdev.org/maven/"
         }
+
         maven {
             name = "Forge"
             url = "http://files.minecraftforge.net/maven"
         }
+
+        maven {
+            name = "Sponge"
+            url = "https://repo.spongepowered.org/maven"
+        }
+
         maven {
             name = "Sonatype"
             url = 'https://oss.sonatype.org/content/groups/public'
@@ -17,6 +24,7 @@ buildscript {
     dependencies {
         classpath 'org.dimdev:ForgeGradle:2.3-SNAPSHOT'
         classpath 'com.matthewprenger:CurseGradle:1.0-SNAPSHOT'
+        classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
     }
 }
 
@@ -24,6 +32,7 @@ apply plugin: 'com.matthewprenger.cursegradle'
 //apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'net.minecraftforge.gradle.tweaker-client'
 apply plugin: 'java'
+apply plugin: 'org.spongepowered.mixin'
 apply from: 'https://gist.githubusercontent.com/UpcraftLP/0a98a7dfe913bd3e99073efa7ad0353b/raw/mod_script.gradle'
 
 def buildVersion = project.mod_version + ext.buildName
@@ -78,7 +87,8 @@ dependencies {
 
     //TODO switch to runtime once ATs work
     //TODO switch to universal jar once deobfCompile works
-    implementation "com.github.ZenDarva:AlmostEnoughItems:${aei_version}:dev"
+    //FIXME re-enable once aei updated to forge mappings
+    //implementation "com.github.ZenDarva:AlmostEnoughItems:${aei_version}:dev"
 
 }
 
@@ -109,6 +119,11 @@ minecraft {
 
     //skip jansi warnings in the log
     clientJvmArgs += '-Dlog4j.skipJansi=true'
+}
+
+mixin {
+    defaultObfuscationEnv notch
+    add sourceSets.main, 'mixins.ghostbuster.refmap.json'
 }
 
 compileJava {

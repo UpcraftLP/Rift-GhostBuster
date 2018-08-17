@@ -1,0 +1,10 @@
+{
+    "id": "ghostbuster",
+    "name": "Ghostbuster",
+    "authors": [
+        "UpcraftLP"
+    ],
+    "listeners": [
+        "com.github.upcraftlp.ghostbuster.GhostBuster"
+    ]
+}

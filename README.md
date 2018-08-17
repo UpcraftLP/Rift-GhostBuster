@@ -1,7 +1,14 @@
 # GhostBuster [![Project](http://cf.way2muchnoise.eu/full_301017_downloads.svg)](https://minecraft.curseforge.com/projects/301017)
 stopping phantoms from spawning
+<br/>
+<br/>
+phantom membranes can instead be obtained by killing bats
 
-This mod requires the [Rift Modloader](https://minecraft.curseforge.com/projects/rift "CurseForge")
+<br/>
+<br/>
+<br/>
+
+### This mod requires the [Rift Modloader](https://minecraft.curseforge.com/projects/rift "CurseForge")
 
 ---
 

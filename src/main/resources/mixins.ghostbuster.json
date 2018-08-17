@@ -1,0 +1,11 @@
+{
+    "required": true,
+    "minVersion": "0.7.7",
+    "compatibilityLevel": "JAVA_8",
+    "target": "@env(DEFAULT)",
+    "package": "com.github.upcraftlp.ghostbuster.mixin",
+    "refmap": "mixins.ghostbuster.refmap.json",
+    "mixins": [
+        "MixinPhantomSpawner"
+    ]
+}
